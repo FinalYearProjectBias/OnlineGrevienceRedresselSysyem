@@ -1,0 +1,116 @@
+:root {
+    --primary-bg-color: #ffffff;
+    --container-bg-color: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    --container-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+    --text-color: #4b4b4b;
+    --highlight-color: #ff6363;
+    --link-color: #007BFF;
+    --link-hover-color: #ff6363;
+    --image-border-radius: 12px;
+    --image-hover-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    --button-bg-color: #007BFF;
+    --button-hover-bg-color: #ff6363;
+    --button-text-color: #ffffff;
+    --fade-duration: 0.8s;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--primary-bg-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    opacity: 0; /* Start with the body invisible */
+    transition: opacity var(--fade-duration) ease-in-out;
+}
+
+body.loaded {
+    opacity: 1; /* Fade-in effect */
+}
+
+.container {
+    background-color: var(--primary-bg-color);
+    background-image: var(--container-bg-color); /* Gradient background */
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: var(--container-shadow); /* Larger shadow for depth */
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: opacity var(--fade-duration) ease-out, transform 0.8s ease-out;
+}
+
+.container.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.container img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: var(--image-border-radius); /* Rounded corners */
+    margin-bottom: 20px;
+    opacity: 0;
+    transition: opacity var(--fade-duration) ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.container img.loaded {
+    opacity: 1;
+    box-shadow: var(--image-hover-shadow); /* Add shadow when loaded */
+}
+
+.details {
+    margin-bottom: 20px;
+    color: var(--text-color); /* Neutral text color */
+}
+
+.details h2 {
+    margin: 0;
+    color: var(--highlight-color); /* Highlighted header */
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.details p {
+    margin: 8px 0;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.details a {
+    color: var(--link-color);
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.details a:hover {
+    color: var(--link-hover-color); /* Color change on hover */
+    text-decoration: underline;
+}
+
+/* Button Styling */
+.container button {
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.4s ease, transform 0.4s ease;
+    margin-top: 15px;
+}
+
+.container button:hover {
+    background-color: var(--button-hover-bg-color);
+    transform: translateY(-3px); /* Slight lift on hover */
+}

@@ -1,0 +1,160 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+}
+.menu {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.menu button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007BFF;
+    color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.menu button i {
+    margin-right: 8px; /* Space between icon and text */
+}
+.menu button:hover {
+    background-color: #0056b3;
+}
+.sign-out {
+    background-color: #dc3545; /* Red color */
+}
+.sign-out:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+.content {
+    display: none;
+}
+.content.active {
+    display: block;
+}
+.form-group {
+    margin-bottom: 15px;
+    position: relative; /* For icon positioning */
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    padding-left: 40px; /* Space for icon */
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+.form-group textarea {
+    resize: vertical;
+}
+.form-group .input-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #999;
+}
+.form-group button {
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.form-group button:hover {
+    background-color: #0056b3;
+}
+.menu .sign-out {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+.menu .sign-out:hover {
+    background-color: #c82333;
+}
+.success-message {
+    color: green;
+    margin-top: 10px;
+    display: none;
+}
+.strength-indicator {
+    display: flex;
+    margin-top: 10px;
+}
+.strength-bar {
+    flex: 1;
+    height: 5px;
+    margin: 0 2px;
+    background-color: #ddd;
+}
+.strength-bar.medium {
+    background-color: #f0ad4e;
+}
+.strength-bar.strong {
+    background-color: #28a745;
+}
+#password-requirements ul {
+    list-style: none;
+    padding-left: 0;
+}
+#password-requirements li {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+#password-requirements li i {
+    margin-right: 10px;
+    color: #999;
+}
+#password-requirements li.valid {
+    color: green;
+}
+#password-requirements li.invalid {
+    color: red;
+}
+.input-container {
+position: relative;
+}
+
+.input-container input {
+padding-left: 40px; /* Space for the icon on the left */
+padding-right: 400px; /* Space for the eye icon on the right */
+}
+
+.input-container .input-icon {
+position: absolute;
+left: 10px; /* Space from the left */
+top: 50%;
+transform: translateY(-50%);
+color: #999;
+}
+
+.input-container .toggle-password {
+position: absolute;
+right: 50px; /* Space from the right */
+top: 50%;
+transform: translateY(-50%);
+cursor: pointer;
+color: #999;
+}

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+   <link rel="stylesheet" href="stylesAdmin.css">
+</head>
+<body>
+
+<div class="admin-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <a data-target="add-grievance-member"><i class="fas fa-user-plus"></i>Add Grievance Cell Member</a>
+
+        <!-- Pending Approvals Dropdown -->
+        <div class="dropdown">
+            <span><i class="fas fa-clock"></i> Pending Approvals</span>
+            <span class="dropdown-arrow">▶</span>
+            <div class="dropdown-content">
+                <a data-target="students-pending"><i class="fas fa-user-graduate"></i> Students</a>
+                <a data-target="teachers-pending"><i class="fas fa-chalkboard-teacher"></i> Teachers</a>
+                <a data-target="non-teaching-pending"><i class="fas fa-users-cog"></i> Non-Teaching Staff</a>
+            </div>
+        </div>
+
+        <!-- Approved Users Dropdown -->
+        <div class="dropdown">
+            <span><i class="fas fa-check-circle"></i> Approved Users</span>
+            <span class="dropdown-arrow">▶</span>
+            <div class="dropdown-content">
+                <a data-target="students-approved"><i class="fas fa-user-graduate"></i> Students</a>
+                <a data-target="teachers-approved"><i class="fas fa-chalkboard-teacher"></i> Teachers</a>
+                <a data-target="non-teaching-approved"><i class="fas fa-users-cog"></i> Non-Teaching Staff</a>
+            </div>
+        </div>
+
+        <a data-target="edit-user-profile"><i class="fas fa-user-edit"></i> Edit User Profile</a>
+        <a data-target="change-password"><i class="fas fa-lock"></i> Change Password</a>
+        <a data-target="grievances"><i class="fas fa-exclamation-triangle"></i> Grievances</a>
+        <a data-target="reports"><i class="fas fa-file-alt"></i> Reports</a>
+        <a data-target="all-grievance-members"><i class="fas fa-users"></i> All Grievance Members</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h2>Admin Dashboard</h2>
+        <div id="success-message" style="display: none; color: green; text-align: center; margin-bottom: 20px;">
+            Action was successful!
+        </div>
+        
+        
+        <!-- Sign Out Button -->
+        <button class="sign-out-btn" id="sign-out-btn">Sign Out</button>
+
+        <!-- Add Grievance Cell Member Section -->
+        <div id="add-grievance-member" class="content-section">
+            <h2>Add Grievance Cell Member</h2>
+            <form id="add-member-form">
+                <div class="form-group">
+                    <label for="member-name">Name</label>
+                    <div class="input-container">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="member-name" name="name" placeholder="Enter name" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Gender:</label>
+                    <label class="gender-label">
+                        <input type="radio" id="male" name="gender" value="male" required> Male
+                    </label>
+                    <label class="gender-label">
+                        <input type="radio" id="female" name="gender" value="female" required> Female
+                    </label>
+                    <label class="gender-label">
+                        <input type="radio" id="other" name="gender" value="other" required> Other
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="member-designstion">Degination</label>
+                    <div class="input-container">
+                        <i class="fas fa-tag"></i>
+                        <input type="text" id="member-degination" name="degination" placeholder="Enter degination" required>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="member-email">Email</label>
+                    <div class="input-container">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="member-email" name="email" placeholder="Enter email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="member-contact">Contact No.</label>
+                    <div class="input-container">
+                        <i class="fas fa-phone icon"></i>
+                        <input type="tel" id="member-contact" name="contact" placeholder="Enter number" required>
+                    </div>
+                </div>
+              
+
+                <div class="form-group">
+                    <label for="member-password">Password</label>
+                    <div class="input-container">
+                        <i class="fas fa-lock icon"></i>
+                        <input type="password" id="member-password" name="password" placeholder="Enter password" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit">Add Member</button>
+                </div>
+                <div id="form-success-message" style="display: none;">Member added successfully!</div>
+            </form>
+        </div>
+
+        <!-- Pending Approvals Sections -->
+        <div class="content-section" id="students-pending">
+            <h3>Pending Student Approvals</h3>
+            <!-- Add content for pending student approvals -->
+        </div>
+
+        <div class="content-section" id="teachers-pending">
+            <h3>Pending Teacher Approvals</h3>
+            <!-- Add content for pending teacher approvals -->
+        </div>
+
+        <div class="content-section" id="non-teaching-pending">
+            <h3>Pending Non-Teaching Staff Approvals</h3>
+            <!-- Add content for pending non-teaching staff approvals -->
+        </div>
+
+        <!-- Approved Users Sections -->
+        <div class="content-section" id="students-approved">
+            <h3>Approved Students</h3>
+            <!-- Add content for approved students -->
+        </div>
+
+        <div class="content-section" id="teachers-approved">
+            <h3>Approved Teachers</h3>
+            <!-- Add content for approved teachers -->
+        </div>
+
+        <div class="content-section" id="non-teaching-approved">
+            <h3>Approved Non-Teaching Staff</h3>
+            <!-- Add content for approved non-teaching staff -->
+        </div>
+
+        <!-- Edit User Profile Section -->
+<div class="content-section" id="edit-user-profile">
+    <h3>Edit User Profile</h3>
+    <form id="edit-profile-form">
+        <div class="form-group">
+            <label for="edit-profile-name">Name:</label>
+            <div class="input-container">
+                <i class="fas fa-user"></i>
+                <input type="text" id="edit-profile-name" name="name" placeholder="Enter your name"required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="edit-profile-email">Email:</label>
+            <div class="input-container">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="edit-profile-email" name="email" placeholder="Enter your email" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="edit-profile-phone">Phone:</label>
+            <div class="input-container">
+                <i class="fas fa-phone"></i>
+                <input type="tel" id="edit-profile-phone" name="phone" placeholder="Enter your number"required>
+            </div>
+        </div>
+       
+        <div class="form-group">
+            <button type="submit">Update Profile</button>
+        </div>
+        <div id="edit-profile-success-message" style="color: green; text-align: center; display: none;">
+            Profile updated successfully!
+        </div>
+
+    </form>
+</div>
+
+        <!-- Change Password Section -->
+        <div class="content-section" id="change-password">
+            <h3>Change Password</h3>
+            <form id="change-password-form">
+                <div class="form-group">
+                    <label for="current-password">Current Password:</label>
+                    <div class="input-container">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="current-password" name="current-password" placeholder="Enter current password" required>
+                        <i1 class="fas fa-eye toggle-password" data-input="current-password"></i1>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="new-password">New Password:</label>
+                    <div class="input-container">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="new-password" name="new-password" placeholder="Enter new password" required>
+                        <i1 class="fas fa-eye toggle-password" data-input="new-password"></i1>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-new-password">Confirm New Password:</label>
+                    <div class="input-container">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="confirm-new-password" name="confirm-new-password" placeholder="Confirm new password" required>
+                        <i1 class="fas fa-eye toggle-password" data-input="confirm-new-password"></i1>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Change Password</button>
+                </div>
+                <div id="password-error" style="color: red; text-align: center; margin-top: 10px;"></div>
+                <div id="change-password-success-message" style="display: none; color: green; text-align: center; margin-top: 10px;">
+                    Password changed successfully!
+                </div>
+            </form>
+            
+        </div>
+
+        <!-- Grievances Section -->
+        <div class="content-section" id="grievances">
+            <h3>Grievances</h3>
+            <!-- Add content for grievances -->
+        </div>
+
+        <!-- Reports Section -->
+        <div class="content-section" id="reports">
+            <h3>Reports</h3>
+            <!-- Add content for reports -->
+        </div>
+
+        <!-- All Grievance Members Section -->
+         <!-- All Grievance Members Section -->
+    <div class="content-section" id="all-grievance-members">
+        <h3>All Grievance Members</h3>
+        <table id="members-table">
+            <thead>
+                <tr>
+                    <th>Sr. No.</th>
+                    <th>Member Name</th>
+                    <th>Gender</th>
+                    <th>Designation</th>
+                    <th>Email</th>
+                    <th>Mobile No.</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </div>
+        <button class="sign-out-btn" onclick="signOut()">Sign Out</button>
+    </div>
+ </div>
+
+
+<script src="scriptAdmin.js"></script>
+</body>
+</html>
